@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="fi">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- Litera theme from Bootswatch.com -->
+    <link rel="stylesheet" href="bootstrap-theme-litera.css" />
+    <style>
+      #pie-container {
+        position: fixed;
+        top: 375px;
+        right: 20px;
+        width: 100px;
+        height: 100px;
+      }
+      .list-group-item {
+        padding: 0.25rem 0.6rem;
+      }
+      .idx {
+        display: inline-block;
+        width: 2.5rem;
+        text-align: center;
+        padding-right: 1rem;
+        color: #888;
+      }
+      .name {
+        display: inline-block;
+        width: 2.5rem;
+        font-weight: 700;
+      }
+      footer {
+        margin-top: 2rem;
+        background-color: #eee;
+        padding: 2rem;
+      }
+      .list-group-item.selected {
+        background-color: #0275eb;
+        color: #fff;
+      }
+      .list-group-item.selected .idx {
+        color: #fff;
+      }
+    </style>
+
+    <title>Suomalaisten sukunimien alkukirjaimet 2020</title>
+    <meta property="og:title" content="Sukunimien alkukirjaimet" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="http://tumppi.com/sukunimet/" />
+    <meta property="og:description" content="Yleisimmät suomalaisten sukunimien alkukirjaimet vuonna 2020." />
+    <meta property="og:locale" content="fi_FI" />
+    <meta property="og:image" content="http://tumppi.com/sukunimet/thumbnail.jpg" />
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <h1>Suomalaisten sukunimien alkukirjaimet 2020</h1>
+          <p>
+            Taulukossa on suomalaisista sukunimistä kaksi ensimmäistä kirjainta.
+            Luku kirjainten perässä osoittaa, kuinka monella prosentilla suomalaisista
+            alkaa sukunimi kyseisillä kirjaimilla. Esimerkiksi <strong>KO*</strong> pitää
+            sisällään mm. nimet <strong>Ko</strong>rhonen ja <strong>Ko</strong>ivisto.
+          </p>
+        </div>
+      </div> <!-- .row -->
+      <div class="row">
+        <div class="col-lg-3 col-md-4 col-sm-6 col-7">
+          <div id="name-list" class="list-group"></div>
+        </div>
+      </div>
+    </div> <!-- .container -->
+    <footer class="container-fluid">
+      <div class="row">
+        <div class="col-md-8">
+          Lähdeaineisto:
+          <a href="https://www.avoindata.fi/data/fi/dataset/none">Väestötietojärjestelmän suomalaisten nimiaineistot</a>
+        </div>
+        <div class="col-md-4 text-left text-md-right">
+          tuomas.jaakola@iki.fi
+        </div>
+      </div>
+    </footer>
+    <div id="pie-container">
+      <canvas id="pieChart" width="100" height="100"></canvas>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js" integrity="sha512-s+xg36jbIujB2S2VKfpGmlC3T5V2TF3lY48DX7u2r9XzGzgPsa6wTpOQA7J9iffvdeBN0q9tKzRxVxw1JviZPg==" crossorigin="anonymous"></script>
+    <script src="nameData.js?1"></script>
+    <script src="script.js?1"></script>
+  </body>
+</html>
