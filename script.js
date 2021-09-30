@@ -54,9 +54,13 @@ function renderNames() {
     var nameList = $('#name-list');
     for (var i = 0; i < nameData.length; i++) {
       var entry = nameData[i];
-      var num = '' + Math.round(entry.per * 10000) / 10000;
+      var precision = entry.per < 0.1 ? 1000 : 100;
+      var num = '' + Math.round(entry.per * precision) / precision;
+      if (entry.per < 0.001) {
+        num = '<0,001';
+      }
       var text = '<span class="idx">' + (i + 1) + '</span>';
-      text += '<span class="name">' + entry.start + '</span> <span class="percentage">' + num.replace('.', ',') + ' %</span>';
+      text += '<span class="name">' + entry.start + '</span> <span class="percentage">' + num.replace('.', ',') + '&nbsp;%</span>';
       var newItem = $('<a href="#" class="list-group-item list-group-item-action" data-idx="' + i + '">' + text + '</a>');
       nameList.append(newItem);
     }
